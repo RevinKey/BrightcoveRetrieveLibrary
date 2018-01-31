@@ -55,7 +55,7 @@ router.post('/', async (req, res, next) => {
               }
             }).then(response => {
               return response.body;
-            })
+            });
           } catch (err) {
             console.log(err);
           }
@@ -68,17 +68,16 @@ router.post('/', async (req, res, next) => {
         }
       }
       console.log(videos.length);
-        res.render('index', {
-          title: 'Async/await test',
-          videos: videos,
-          myPartial: () => 'videos'
-        });
+      res.render('index', {
+        title: 'Async/await test',
+        videos: videos,
+        myPartial: () => 'videos'
+      });
     } catch (err) {
       console.log(err);
     }
   } catch (e) {
     console.log(e);
   }
-
 });
 module.exports = router;
